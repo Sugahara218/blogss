@@ -35,5 +35,7 @@ module.exports = {
     }],
     'react/prop-types': [0],
     'linebreak-style': ['error', 'windows'],
+    "linebreak-style": ["error", "unix"],
+    
   },
 };
