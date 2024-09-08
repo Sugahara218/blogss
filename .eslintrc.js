@@ -34,5 +34,6 @@ module.exports = {
       custom: 'ignore',
     }],
     'react/prop-types': [0],
+    'linebreak-style': ['error', 'windows'],
   },
 };
