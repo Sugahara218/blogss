@@ -1,18 +1,18 @@
-import Link from 'next/link'
-import { getDatabase } from '../lib/notion'
-import Text from '../components/text'
-import styles from './page.module.css'
+import Link from 'next/link';
+import { getDatabase } from '../lib/notion';
+import Text from '../components/text';
+import styles from './page.module.css';
 
-export const databaseId = process.env?.NOTION_DATABASE_ID ?? 'NOTION_DATABASE_ID'
+export const databaseId = process.env?.NOTION_DATABASE_ID ?? 'NOTION_DATABASE_ID';
 
 async function getPosts() {
-  const database = await getDatabase()
-  return database
+  const database = await getDatabase();
+  return database;
 }
 
 export default async function Page() {
-  const posts = await getPosts()
-  
+  const posts = await getPosts();
+
   return (
     <div className={styles.container}>
       <main className={styles.main}>
@@ -43,9 +43,9 @@ export default async function Page() {
                 month: 'short',
                 day: '2-digit',
                 year: 'numeric',
-              }
-            )
-            const slug = post.properties?.Slug?.rich_text[0].text.content
+              },
+            );
+            const slug = post.properties?.Slug?.rich_text[0].text.content;
             return (
               <li key={post.id} className={styles.postItem}>
                 <h3 className={styles.postTitle}>
@@ -54,15 +54,14 @@ export default async function Page() {
                   </Link>
                 </h3>
                 <p className={styles.postDate}>{date}</p>
-                
                 <Link href={`/article/${slug}`} className={styles.readMore}>
                   Read more
                 </Link>
               </li>
-            )
+            );
           })}
         </ol>
       </main>
     </div>
-  )
+  );
 }
