@@ -5,8 +5,10 @@ import styles from './page.module.css';
 
 export const databaseId = process.env?.NOTION_DATABASE_ID ?? 'NOTION_DATABASE_ID';
 
+export const revalidate = 60; // ISRの設定：60秒ごとに再検証
+
 async function getPosts() {
-  const database = await getDatabase();
+  const database = await getDatabase(databaseId);
   return database;
 }
 
