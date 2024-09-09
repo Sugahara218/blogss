@@ -7,7 +7,7 @@ import styles from '../../styles/post.module.css';
 export function renderBlock(block) {
   const { type, id } = block;
   const value = block[type];
-
+  console.log(type);
   switch (type) {
     case 'paragraph':
       return (
