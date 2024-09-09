@@ -7,7 +7,6 @@ import styles from '../../styles/post.module.css';
 export function renderBlock(block) {
   const { type, id } = block;
   const value = block[type];
-  console.log(type);
   switch (type) {
     case 'paragraph':
       return (
@@ -154,6 +153,22 @@ export function renderBlock(block) {
     }
     case 'column': {
       return <div>{block.children.map((child) => renderBlock(child))}</div>;
+    }
+    case 'embed': {
+      const text = value.url;
+      let linkText = 'External Link';
+      if (text.includes('spotify')) {
+        linkText = 'Spotify';
+      } else if (text.includes('youtube')) {
+        linkText = 'YouTube';
+      }
+      return (
+        <div>
+          <a href={text} target="_blank" rel="noopener noreferrer">
+            {linkText}
+          </a>
+        </div>
+      );
     }
     default:
       return `❌ Unsupported block (${
