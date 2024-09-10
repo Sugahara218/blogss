@@ -155,19 +155,33 @@ export function renderBlock(block) {
       return <div>{block.children.map((child) => renderBlock(child))}</div>;
     }
     case 'embed': {
-      const text = value.url;
-      let linkText = 'External Link';
-      if (text.includes('spotify')) {
-        linkText = 'Spotify';
-      } else if (text.includes('youtube')) {
-        linkText = 'YouTube';
+      const { url } = value;
+      if (url.includes('open.spotify.com')) {
+        // Spotify埋め込み
+        const embedUrl = url.replace('open.spotify.com', 'open.spotify.com/embed');
+        return (
+          <iframe
+            src={embedUrl}
+            width="100%"
+            height="352"
+            frameBorder="0"
+            allowFullScreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+            title="Spotify Embed"
+          />
+        );
       }
+      // 他の埋め込みコンテンツの場合
       return (
-        <div>
-          <a href={text} target="_blank" rel="noopener noreferrer">
-            {linkText}
-          </a>
-        </div>
+        <iframe
+          src={url}
+          width="100%"
+          height="352"
+          frameBorder="0"
+          allowFullScreen=""
+          title={`Embedded content from ${url}`}
+        />
       );
     }
     default:
