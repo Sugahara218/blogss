@@ -174,14 +174,7 @@ export function renderBlock(block) {
       }
       // 他の埋め込みコンテンツの場合
       return (
-        <iframe
-          src={url}
-          width="100%"
-          height="352"
-          frameBorder="0"
-          allowFullScreen=""
-          title={`Embedded content from ${url}`}
-        />
+        <iframe width="100%" height="300" scrolling="no" frameBorder="no" allow="autoplay" src={url} loading="lazy" title="Embed" />
       );
     }
     default:
