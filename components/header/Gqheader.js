@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image'; // Imageコンポーネントをインポート
 
 const styles = {
   header: {
@@ -57,11 +56,12 @@ const styles = {
   },
   bottomNavList: {
     display: 'flex',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     padding: '0.5rem 0',
     margin: 0,
     listStyle: 'none',
     overflowX: 'auto',
+    gap: '20px',
   },
   bottomNavItem: {
     whiteSpace: 'nowrap',
@@ -92,23 +92,18 @@ export default function GQHeader() {
       <div style={styles.container}>
         <div style={styles.topBar}>
           <nav style={styles.desktopNav}>
-            <Link href="/subscription" style={styles.navLink}>Subscription</Link>
-            <Link href="/shop" style={styles.navLink}>GQ Shop</Link>
+            {/* <Link href="/subscription" style={styles.navLink}>Subscription</Link>
+            <Link href="/shop" style={styles.navLink}>GQ Shop</Link> */}
           </nav>
           <div style={styles.logoContainer}>
             <Link href="/" style={styles.logo}>GQ</Link>
-          </div>
-          <div style={styles.menuButton}>
-            <button type="button" style={styles.mobileMenuButton} aria-label="Open menu">
-              <Image src="/menu-icon.svg" alt="Menu" width={24} height={24} style={styles.menuIcon} />
-            </button>
           </div>
         </div>
       </div>
       <nav style={styles.bottomNav}>
         <div style={styles.container}>
           <ul style={styles.bottomNavList}>
-            {['Fashion', 'Cars', 'Watches', 'Art', 'Lifestyle and Culture', 'Sports', 'Video', 'Men of the Year'].map((item) => (
+            {['Audio', 'Video'].map((item) => (
               <li key={item} style={styles.bottomNavItem}>
                 <Link href={`/${item.toLowerCase().replace(/ /g, '-')}`} style={styles.bottomNavLink}>{item}</Link>
               </li>

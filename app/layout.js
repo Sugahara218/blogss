@@ -1,9 +1,10 @@
 import '../styles/globals.css';
 import GQHeader from '../components/header/Gqheader';
+import Footer from '../components/footer/Footer';
 
 export const metadata = {
-  title: 'Notion Next.js blog',
-  description: 'Notion Next.js blog',
+  title: 'Ryousuke Audio Blog',
+  description: 'Ryousuke Audio Blog',
 };
 
 export default function RootLayout({ children }) {
@@ -12,6 +13,7 @@ export default function RootLayout({ children }) {
       <body>
         <GQHeader />
         <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
