@@ -25,3 +25,12 @@
   min-width: 300px;
   grid-column: 9 / -2;
 }
+
+@media (max-width: 740px) {
+  .sideContent {
+    display: none;
+  }
+  .divGrid {
+    grid-column: 2 / -2;
+  }
+}
