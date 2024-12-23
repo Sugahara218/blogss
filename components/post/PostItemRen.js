@@ -1,9 +1,8 @@
-import Image from 'next/image';
 
 function PostItemRen({ src }) {
   return (
     <div>
-      <Image
+      <img
         src={src}
         alt="cover画像"
         style={{
