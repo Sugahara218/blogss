@@ -31,6 +31,6 @@
     display: none;
   }
   .divGrid {
-    grid-column: 2 / -2;
+    grid-template-columns: 1fr;
   }
 }
