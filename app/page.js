@@ -4,6 +4,7 @@ import Text from '../components/text';
 import styles from './page.module.css';
 import PostItem from '../components/post/PostItem';
 import stylesPost from '../components/post/PostItem.module.css';
+import PostItemRen from '../components/post/PostItemRen';
 
 export const databaseId = process.env?.NOTION_DATABASE_ID ?? 'NOTION_DATABASE_ID';
 
@@ -38,15 +39,7 @@ export default async function Page() {
                 return (
                   <div key={post.id}>
                     <Link href={`/article/${slug}`} className={styles.title}>
-                      <img
-                        src={coverImage}
-                        alt="cover画像"
-                        style={{
-                          height: '100%',
-                          objectFit: 'cover',
-                          width: '100%', // 必要に応じて幅も設定
-                        }}
-                      />
+                      <PostItemRen src={coverImage} />
                     </Link>
                     <h3 className={styles.postTitle}>
                       <Link href={`/article/${slug}`} className={styles.postLink}>

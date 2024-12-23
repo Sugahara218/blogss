@@ -7,6 +7,8 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 48px 20px;
+  font-family: YuGothic, GQSans, YakuhanJP, "Yu Gothic", YuGothic,
+    "Hiragino Sans", "Noto Sans CJK JP", sans-serif;
 }
 
 .header {

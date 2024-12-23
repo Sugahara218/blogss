@@ -1,0 +1,27 @@
+.container {
+  padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  line-height: 1.5;
+  white-space: pre-line;
+  min-height: 100vh;
+  font-family: YuGothic, GQSans, YakuhanJP, "Yu Gothic", YuGothic,
+    "Hiragino Sans", "Noto Sans CJK JP", sans-serif;
+}
+.section {
+  line-height: 1.75em;
+  overflow-wrap: break-word;
+  grid-column: 2 / span 6;
+}
+.h1 {
+  font-size: x-large;
+}
+.divGrid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+.sideContent {
+  display: block;
+  min-width: 300px;
+  grid-column: 9 / -2;
+}
